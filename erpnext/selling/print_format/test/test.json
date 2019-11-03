@@ -1,0 +1,22 @@
+{
+ "align_labels_right": 0,
+ "creation": "2019-10-29 16:00:43.983428",
+ "custom_format": 1,
+ "disabled": 0,
+ "doc_type": "Sales Order",
+ "docstatus": 0,
+ "doctype": "Print Format",
+ "font": "Default",
+ "html": "<br/>\n<br/><div style=\"margin-left:380px\">{{ doc.delivery_date }}</div>\n<div class=\"row\" style=\"margin-left:70px\">\n\t<table>\n\t\t<tr>\n\t\t\t<td style=\"width:405px\">{{ doc.customer_name }}<br>{{ doc.name}}\n\t\t\t</td>\n\t\t\t<td >{{ doc.address_display }}\n\t\t\t</td>\n\t\t</tr>\n\t</table>\n</div>\n<br>\n<br>\n<br>\n<br>\n<div class=\"row\">\n</div>\n<table>\n\t<tbody text-align=\"right\">\n\t\t{%- for row in doc.items -%}\n\t\t<tr>\n\t\t\t<td style=\"width:50px\">{{ row.qty }}</td>\n\t\t\t<td style=\"width:60px\"> {{ row.uom or row.stock_uom }}</td>\n\t\t\t<td style=\"width:395px\">\n\t\t\t\t{{row.volume}}\n\t\t\t</td>\n\t\t\t<td style=\"\">\n\t\t\t\t<div style=\"\">{{ row.get_formatted(\"rate\", doc)}}</div></td>\n\t\t\t<td style=\"width:100px\"></td>\n\t\t\t<td style=\"\">{{\n\t\t\t\trow.get_formatted(\"amount\", doc) }}</td>\n\t\t</tr>\n\t\t{%- endfor -%}\n\t</tbody>\n</table>\n<div style=\"margin-top:480px\">\n\t<div style=\"margin-left:660px\">\tP{{doc.grand_total}}\n</div>",
+ "idx": 0,
+ "line_breaks": 0,
+ "modified": "2019-10-30 21:46:40.167242",
+ "modified_by": "Administrator",
+ "module": "Selling",
+ "name": "test",
+ "owner": "Administrator",
+ "print_format_builder": 1,
+ "print_format_type": "Js",
+ "show_section_headings": 0,
+ "standard": "Yes"
+}
